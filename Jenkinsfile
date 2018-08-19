@@ -2,6 +2,11 @@ node{
   stage ('cloning the repository'){
       git 'https://github.com/tapansirol/jpet-store'
   }
+  stage ('Build') {
+      withMaven(jdk: 'JDK_local', maven: 'MVN_Local') {
+      bat 'mvn clean package'
+    }
+  }
 stage ('Push to UCD...') {
        step([$class: 'UCDeployPublisher',
             siteName: 'ucd-server',

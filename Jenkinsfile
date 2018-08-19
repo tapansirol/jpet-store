@@ -5,7 +5,7 @@ node{
   stage ('Build') {
       withMaven(jdk: 'JDK_local', maven: 'MVN_Local') {
       bat 'mvn clean package'
-    } +96
+    }
   }
 stage ('Push to UCD...') {
        step([$class: 'UCDeployPublisher',

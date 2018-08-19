@@ -4,7 +4,7 @@ node{
   }
 stage ('Push to UCD...') {
        step([$class: 'UCDeployPublisher',
-            siteName: 'Docker IBM UrbanCode Deploy Server',
+            siteName: 'ucd-server',
             component: [
                 $class: 'com.urbancode.jenkins.plugins.ucdeploy.VersionHelper$VersionBlock',
                 componentName: 'UCD - Pipeline',

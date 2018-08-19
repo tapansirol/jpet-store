@@ -19,8 +19,8 @@ stage ('Push to UCD...') {
                 delivery: [
                     $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeliveryHelper$Push',
                     pushVersion: '${BUILD_NUMBER}',
-                    baseDir: 'target',
-                    fileIncludePatterns: '*.war',
+                    baseDir: '.',
+                    fileIncludePatterns: 'target//*.war',
                     fileExcludePatterns: '',
                     pushProperties: 'jenkins.server=Local\njenkins.reviewed=false',
                     pushDescription: 'Pushed from Jenkins',

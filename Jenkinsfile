@@ -22,7 +22,7 @@ stage ('Push to UCD...') {
                     baseDir: 'workspace\\jpet-store-test-tapan\\target',
                     fileIncludePatterns: '*.war',
                     fileExcludePatterns: '',
-                    pushProperties: 'jenkins.server=Local',
+                    pushProperties: 'jenkins.reviewed=false',
                     pushDescription: 'Pushed from Jenkins',
                     pushIncremental: false
                 ]

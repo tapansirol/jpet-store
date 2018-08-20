@@ -7,10 +7,9 @@ node{
       bat 'mvn clean package'
     }
   }
-stage ('Push to UCD...') {
-       step([$class: 'UCDeployPublisher',
-            siteName: 'ucd-server',
-	    component: [
+   step([$class: 'UCDeployPublisher',
+        siteName: 'ucd-server',
+        component: [
             $class: 'com.urbancode.jenkins.plugins.ucdeploy.VersionHelper$VersionBlock',
             componentName: 'Jenkins',
             createComponent: [
@@ -18,19 +17,17 @@ stage ('Push to UCD...') {
                 componentTemplate: '',
                 componentApplication: 'Jenkins'
             ],
-                delivery: [
-                    $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeliveryHelper$Push',
-                    pushVersion: '${BUILD_NUMBER}',
-                    baseDir: 'workspace\\jpet-store-test-tapan\\target',
-                    fileIncludePatterns: '*.war',
-                    fileExcludePatterns: '',
-                    pushProperties: 'jenkins.reviewed=false',
-                    pushDescription: 'Pushed from Jenkins',
-                    pushIncremental: false
-                ]
+            delivery: [
+                $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeliveryHelper$Push',
+                pushVersion: '${BUILD_NUMBER}',
+                baseDir: 'workspace\\jpet-store-test-tapan\\target',
+                fileIncludePatterns: '*.war',
+                fileExcludePatterns: '',
+                pushProperties: 'jenkins.server=Local\njenkins.reviewed=false',
+                pushDescription: 'Pushed from Jenkins'
             ]
-        ])
-   
+        ]
+    ])
 	step([$class: 'UCDeployPublisher',
         	siteName: 'ucd-server',
         	deploy: [

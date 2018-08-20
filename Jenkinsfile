@@ -22,13 +22,29 @@ stage ('Push to UCD...') {
                     baseDir: 'workspace\\jpet-store-test-tapan\\target',
                     fileIncludePatterns: '*.war',
                     fileExcludePatterns: '',
-                    pushProperties: 'jenkins.server=Local\njenkins.reviewed=false',
-                    pushDescription: 'Pushed from Jenkins',
+                   // pushProperties: 'jenkins.server=Local\njenkins.reviewed=false',
+                    //pushDescription: 'Pushed from Jenkins',
                     pushIncremental: false
                 ]
             ]
         ])
-   }
+   
+	step([$class: 'UCDeployPublisher',
+        	siteName: 'ucd-server',
+        	deploy: [
+            	$class: 'com.urbancode.jenkins.plugins.ucdeploy.DeployHelper$DeployBlock',
+            	deployApp: 'Jenkins',
+            	deployEnv: 'Test',
+            	deployProc: 'Deploy Jenkins',
+            	createProcess: [
+                	$class: 'com.urbancode.jenkins.plugins.ucdeploy.ProcessHelper$CreateProcessBlock',
+                	processComponent: 'Deploy'
+            	],
+            	deployVersions: 'Jenkins:${BUILD_NUMBER}',
+            	deployOnlyChanged: false
+        ]
+    ])
+}
   
 }
 

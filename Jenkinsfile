@@ -10,12 +10,14 @@ node{
 stage ('Push to UCD...') {
        step([$class: 'UCDeployPublisher',
             siteName: 'ucd-server',
-            component: [
-                $class: 'com.urbancode.jenkins.plugins.ucdeploy.VersionHelper$VersionBlock',
-                componentName: 'UCD - Pipeline',
-                createComponent: [
-                    $class: 'com.urbancode.jenkins.plugins.ucdeploy.ComponentHelper$CreateComponentBlock'
-                ],
+	    component: [
+            $class: 'com.urbancode.jenkins.plugins.ucdeploy.VersionHelper$VersionBlock',
+            componentName: 'Jenkins',
+            createComponent: [
+                $class: 'com.urbancode.jenkins.plugins.ucdeploy.ComponentHelper$CreateComponentBlock',
+                componentTemplate: '',
+                componentApplication: 'Jenkins'
+            ],
                 delivery: [
                     $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeliveryHelper$Push',
                     pushVersion: '${BUILD_NUMBER}',

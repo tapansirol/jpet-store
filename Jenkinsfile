@@ -43,7 +43,6 @@ node{
             	deployOnlyChanged: false
         ]
     ])
-}
   
 }
 

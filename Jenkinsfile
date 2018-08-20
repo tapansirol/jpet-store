@@ -23,8 +23,8 @@ stage ('Push to UCD...') {
                     fileIncludePatterns: '*.war',
                     fileExcludePatterns: '',
                     pushProperties: {
-		    'jenkins.reviewed': false,
-		    'jenkins.server':'Local'},
+		    'jenkins.reviewed'=false,
+		    'jenkins.server'='Local'},
                     pushDescription: 'Pushed from Jenkins',
                     pushIncremental: false
                 ]

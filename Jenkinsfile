@@ -39,7 +39,7 @@ node{
                 	$class: 'com.urbancode.jenkins.plugins.ucdeploy.ProcessHelper$CreateProcessBlock',
                 	processComponent: 'Deploy'
             	],
-            	deployVersions: 'Jenkins:${BUILD_NUMBER}',
+            	deployVersions: 'jenkins-test-component:${BUILD_NUMBER}',
             	deployOnlyChanged: false
         ]
     ])

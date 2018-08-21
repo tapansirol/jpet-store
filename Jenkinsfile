@@ -32,7 +32,7 @@ node{
         	siteName: 'ucd-server',
         	deploy: [
             	$class: 'com.urbancode.jenkins.plugins.ucdeploy.DeployHelper$DeployBlock',
-            	deployApp: 'Jenkins',
+            	deployApp: 'Jenkins-app',
             	deployEnv: 'Test',
             	deployProc: 'Deploy Jenkins',
             	createProcess: [

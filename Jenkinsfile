@@ -15,7 +15,7 @@ node{
             createComponent: [
                 $class: 'com.urbancode.jenkins.plugins.ucdeploy.ComponentHelper$CreateComponentBlock',
                 componentTemplate: '',
-                componentApplication: 'Jenkins-app'
+                componentApplication: 'Demo-app'
             ],
             delivery: [
                 $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeliveryHelper$Push',
@@ -32,8 +32,8 @@ node{
         	siteName: 'ucd-server',
         	deploy: [
             	$class: 'com.urbancode.jenkins.plugins.ucdeploy.DeployHelper$DeployBlock',
-            	deployApp: 'Jenkins-app',
-            	deployEnv: 'Dev-env',
+            	deployApp: 'Deploy-app',
+            	deployEnv: 'Test',
             	deployProc: 'Deploy Jenkins',
             	createProcess: [
                 	$class: 'com.urbancode.jenkins.plugins.ucdeploy.ProcessHelper$CreateProcessBlock',

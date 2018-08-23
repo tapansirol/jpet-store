@@ -33,7 +33,7 @@ node{
         	deploy: [
             	$class: 'com.urbancode.jenkins.plugins.ucdeploy.DeployHelper$DeployBlock',
             	deployApp: 'Jenkins-app',
-            	deployEnv: 'Test',
+            	deployEnv: 'Dev-env',
             	deployProc: 'Deploy Jenkins',
             	createProcess: [
                 	$class: 'com.urbancode.jenkins.plugins.ucdeploy.ProcessHelper$CreateProcessBlock',

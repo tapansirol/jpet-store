@@ -11,7 +11,7 @@ node{
         siteName: 'ucd-server',
         component: [
             $class: 'com.urbancode.jenkins.plugins.ucdeploy.VersionHelper$VersionBlock',
-            componentName: 'jenkins-test-component',
+            componentName: 'jenkins-jpet-component',
             createComponent: [
                 $class: 'com.urbancode.jenkins.plugins.ucdeploy.ComponentHelper$CreateComponentBlock',
                 componentTemplate: '',
@@ -39,7 +39,7 @@ node{
                 	$class: 'com.urbancode.jenkins.plugins.ucdeploy.ProcessHelper$CreateProcessBlock',
                 	processComponent: 'Deploy'
             	],
-            	deployVersions: 'jenkins-test-component:${BUILD_NUMBER}',
+            	deployVersions: 'jenkins-jpet-component:${BUILD_NUMBER}',
             	deployOnlyChanged: false
         ]
     ])

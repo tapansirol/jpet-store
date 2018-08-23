@@ -23,7 +23,7 @@ node{
                 baseDir: 'workspace\\jpet-store-test-tapan\\target',
                 fileIncludePatterns: '*.war',
                 fileExcludePatterns: '',
-                pushProperties: 'jenkins.server=Jenkins-app\njenkins.reviewed=false',
+               // pushProperties: 'jenkins.server=Jenkins-app\njenkins.reviewed=false',
                 pushDescription: 'Pushed from Jenkins'
             ]
         ]

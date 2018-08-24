@@ -39,6 +39,10 @@ node{
                 	$class: 'com.urbancode.jenkins.plugins.ucdeploy.ProcessHelper$CreateProcessBlock',
                 	processComponent: 'Deploy'
             	],
+                createSnapshot: [
+                        $class: ‘com.urbancode.jenkins.plugins.ucdeploy.DeployHelper$CreateSnapshotBlock’,
+                        snapshotName: ‘snap-for-velo’
+              ],
             	deployVersions: 'jenkins-jpet-component:${BUILD_NUMBER}',
             	deployOnlyChanged: false
         ]

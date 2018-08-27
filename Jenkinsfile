@@ -7,6 +7,7 @@ node{
       bat 'mvn clean package'
     }
   }
+  stage('publish artificats to ucd'){
    step([$class: 'UCDeployPublisher',
         siteName: 'ucd-server',
         component: [
@@ -43,6 +44,6 @@ node{
             	deployOnlyChanged: false
         ]
     ])
-  
+ } 
 }
 

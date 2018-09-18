@@ -19,7 +19,7 @@ node{
             createComponent: [
                 $class: 'com.urbancode.jenkins.plugins.ucdeploy.ComponentHelper$CreateComponentBlock',
                 componentTemplate: '',
-                componentApplication: 'Demo-app'
+                componentApplication: 'JPetStore'
             ],
             delivery: [
                 $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeliveryHelper$Push',
@@ -36,7 +36,7 @@ node{
         	siteName: 'ucd-server',
         	deploy: [
             	$class: 'com.urbancode.jenkins.plugins.ucdeploy.DeployHelper$DeployBlock',
-            	deployApp: 'Demo-app',
+            	deployApp: 'JPetStore',
             	deployEnv: 'Test',
             	deployProc: 'Deploy Jenkins',
             	createProcess: [

@@ -4,7 +4,7 @@ node{
   }
   stage ('Build') {
       withMaven(jdk: 'JDK_local', maven: 'MVN_Local') {
-      bat 'mvn clean package'
+      sh 'mvn clean package'
     }
   }
 // stage ("running appscan on cloud"){

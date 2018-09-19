@@ -3,13 +3,13 @@ node{
       git 'https://github.com/tapansirol/jpet-store'
   }
 	
-  stage("build & SonarQube analysis") {
-          node {
-              withSonarQubeEnv('My SonarQube Server') {
-                 sh 'mvn clean package sonar:sonar'
-              }
-          }
-      }
+  stage('SonarQube analysis') {
+    // requires SonarQube Scanner 2.8+
+    def scannerHome = tool 'sonar';
+    withSonarQubeEnv('My SonarQube Server') {
+      sh "${scannerHome}/bin/sonar-scanner"
+    }
+  }
   //stage ('Build') {
    //   withMaven(jdk: 'JDK_local', maven: 'MVN_Local') {
     //  sh 'mvn clean package'

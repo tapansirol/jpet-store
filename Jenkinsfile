@@ -17,7 +17,7 @@ node{
   }
 	stage('SonarQube Analysis'){
 		def mvnHome = tool name : 'MVN_Local', type:'maven'
-		runwithSonarQubeEnv('sonar-new'){
+		withSonarQubeEnv('sonar-new'){
 			sh "${mvnHome}/bin/mvn sonar:sonar"
 		}
 	}

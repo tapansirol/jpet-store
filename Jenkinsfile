@@ -1,6 +1,6 @@
 node {
   stage('SCM') {
-    git 'https://github.com/foo/bar.git'
+    git 'https://github.com/tapansirol/jpet-store.git'
   }
   stage('SonarQube analysis') {
     withSonarQubeEnv('sonar-new') {

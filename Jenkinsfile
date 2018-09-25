@@ -4,7 +4,7 @@ node {
   }
   stage('SonarQube analysis') {
       // requires SonarQube Scanner 2.8+
-    def scannerHome = tool 'SonarQube Scanner 2.8';
+    def scannerHome = tool 'sonar-new';
     withSonarQubeEnv('sonar-new') {
       // requires SonarQube Scanner for Maven 3.2+
       sh "${scannerHome}/bin/sonar-scanner"

@@ -22,7 +22,7 @@ node{
 		}
 	}
  stage ("running appscan on cloud"){
-       appscan application: 'c60354b4-1e1c-600a-3c37-cbbd604f7849', credentials: 'ASOC_Staging', failBuild: true, failureConditions: [failure_condition(failureType: 'high', threshold: 20)], name: 'JPS_test', scanner: static_analyzer('C:\\Users\\kalra_m\\eclipse-workspace-latest\\jpetstore-6'), type: 'Static Analyzer', wait: true
+       appscan application: '370fec28-1909-b4af-dc3e-d5695f313043', credentials: 'ASOC_Staging', failBuild: true, failureConditions: [failure_condition(failureType: 'high', threshold: 20)], name: 'JPS_test', scanner: static_analyzer('C:\\Users\\kalra_m\\eclipse-workspace-latest\\jpetstore-6'), type: 'Static Analyzer', wait: true
   }
   stage('publish artificats to ucd'){
    step([$class: 'UCDeployPublisher',

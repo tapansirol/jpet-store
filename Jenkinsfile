@@ -21,8 +21,8 @@ node{
 			sh "SONAR_USER_HOME=/opt/bitnami/jenkins/.sonar ${mvnHome}/bin/mvn sonar:sonar"
 		}
 	}
- stage ("running appscan on cloud"){
-       appscan application: '370fec28-1909-b4af-dc3e-d5695f313043', credentials: 'ASOC_Staging', failBuild: true, failureConditions: [failure_condition(failureType: 'high', threshold: 20)], name: 'JPS_test', scanner: static_analyzer('C:\\Users\\kalra_m\\eclipse-workspace-latest\\jpetstore-6'), type: 'Static Analyzer', wait: true
+// stage ("running appscan on cloud"){
+     //  appscan application: '370fec28-1909-b4af-dc3e-d5695f313043', credentials: 'ASOC_Staging', failBuild: true, failureConditions: [failure_condition(failureType: 'high', threshold: 20)], name: 'JPS_test', scanner: static_analyzer('C:\\Users\\kalra_m\\eclipse-workspace-latest\\jpetstore-6'), type: 'Static Analyzer', wait: true
   }
   stage('publish artificats to ucd'){
    step([$class: 'UCDeployPublisher',

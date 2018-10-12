@@ -52,7 +52,7 @@ node{
             	$class: 'com.urbancode.jenkins.plugins.ucdeploy.DeployHelper$DeployBlock',
             	deployApp: 'JPetStore-App',
             	deployEnv: 'Test',
-            	deployProc: 'Deploy-JPetStore',
+            	deployProc: 'Deploy JPetStore',
             	createProcess: [
                 	$class: 'com.urbancode.jenkins.plugins.ucdeploy.ProcessHelper$CreateProcessBlock',
                 	processComponent: 'Deploy'

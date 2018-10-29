@@ -33,7 +33,7 @@ stage ("running appscan on cloud"){
             createComponent: [
                 $class: 'com.urbancode.jenkins.plugins.ucdeploy.ComponentHelper$CreateComponentBlock',
                 componentTemplate: '',
-                componentApplication: 'JPetStore-App'
+                componentApplication: 'JPetStore'
             ],
             delivery: [
                 $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeliveryHelper$Push',
@@ -50,9 +50,9 @@ stage ("running appscan on cloud"){
         	siteName: 'ucd-server',
         	deploy: [
             	$class: 'com.urbancode.jenkins.plugins.ucdeploy.DeployHelper$DeployBlock',
-            	deployApp: 'JPetStore-App',
+            	deployApp: 'JPetStore',
             	deployEnv: 'Test',
-            	deployProc: 'Deploy JPetStore',
+            	deployProc: 'Deploy-JPetStore',
             	createProcess: [
                 	$class: 'com.urbancode.jenkins.plugins.ucdeploy.ProcessHelper$CreateProcessBlock',
                 	processComponent: 'Deploy'

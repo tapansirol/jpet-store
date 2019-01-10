@@ -1,4 +1,4 @@
-node {
+pipeline {
   stage ('cloning the repository'){
       git 'https://github.com/tapansirol/jpet-store'
   }

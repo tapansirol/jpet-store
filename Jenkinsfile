@@ -1,5 +1,4 @@
-pipeline {
-stages {
+node {
   stage ('cloning the repository'){
       git 'https://github.com/tapansirol/jpet-store'
   }
@@ -9,11 +8,10 @@ stages {
       sh 'mvn clean package'
     }
   }
-}
+
 post { 
         always { 
             sh '/home/config/hcl-onetest-command'
         }
     }
-
 }

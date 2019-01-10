@@ -23,7 +23,7 @@ pipeline {
     post { 
         always { 
             echo 'I will always say Hello!'
-		 sh 'hcl-onetest-command.sh'
+		 sh '/var/jenkins_home/hcl-onetest-command.sh'
         }
     }
 }

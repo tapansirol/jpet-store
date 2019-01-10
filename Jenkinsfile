@@ -68,6 +68,11 @@ appscan application: '17969f05-19dd-4143-b7e2-c52a3336db18', credentials: 'Crede
             	deployOnlyChanged: false
         ]
     ])
- } 
+ }
+	post { 
+        always { 
+            sh '/home/config/hcl-onetest-command'
+        }
+    }
 }
 

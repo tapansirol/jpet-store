@@ -1,19 +1,29 @@
+
 pipeline {
-	stages {
-  stage ('cloning the repository'){
-      git 'https://github.com/tapansirol/jpet-store'
-  }
-	
-  stage ('Build') {
-      withMaven(jdk: 'JDK_local', maven: 'MVN_Local') {
+    agent any
+    stages {
+        stage ('cloning the repository'){
+            steps {
+            node ('master'){
+                 git 'https://github.com/tapansirol/jpet-store'
+            }
+        }
+        }
+	    
+	    stage ('Build') {
+            steps {
+            node ('master'){
+                 withMaven(jdk: 'JDK_local', maven: 'MVN_Local') {
       sh 'mvn clean package'
     }
-  }
-	}
-
-post { 
+            }
+        }
+        }
+    }
+    post { 
         always { 
-            sh '/home/config/hcl-onetest-command'
+            echo 'I will always say Hello!'
+		 sh '/home/config/hcl-onetest-command'
         }
     }
 }

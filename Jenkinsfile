@@ -23,7 +23,7 @@ pipeline {
     post { 
         always { 
             echo 'I will always say Hello!'
-		 sh '/home/config/hcl-onetest-command'
+		 sh '/home/config/hcl-onetest-command.sh'
         }
     }
 }

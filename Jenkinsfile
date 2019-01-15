@@ -12,7 +12,7 @@ node{
 	
  stage ('One Test') {
  	echo 'I will always say Hello!'
-	sh '/var/hcl-onetest-command.sh'
+	sh '/var/jenkins_home/onetest/hcl-onetest-command.sh'
   }
 
 }

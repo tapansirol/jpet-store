@@ -72,7 +72,7 @@ node{
  
 stage ('One Test') {
  	echo 'Executing HCL One test ... '
-	sh '/var/jenkins_home/hcl-onetest-command.sh'
+	sh '/var/hcl-onetest-command.sh'
   }
 
 }

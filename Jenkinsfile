@@ -30,52 +30,51 @@ node{
 //appscan application: 'd25a0655-7bd2-418f-8a34-ca8338e411c0', credentials: Credential for ASOC', name: 'd25a0655-7bd2-418f-8a34-ca8338e411c09964', scanner: static_analyzer(hasOptions: false, target: ''), type: 'Static Analyzer'
 //appscan application: 'd25a0655-7bd2-418f-8a34-ca8338e411c0', credentials: 'Credential for ASOC', failBuild: true, failureConditions: [failure_condition(failureType: 'high', threshold: 20)], name: 'd25a0655-7bd2-418f-8a34-ca8338e411c09964', scanner: static_analyzer('/var/jenkins_home/jobs/JPetStore-test'), type: 'Static Analyzer', wait: true
 
- //appscan application: '17969f05-19dd-4143-b7e2-c52a3336db18', credentials: 'Credential for ASOC', failBuild: true, failureConditions: [failure_condition(failureType: 'high', threshold: 20)], name: 'test_07012019', scanner: static_analyzer(hasOptions: false, target: '/var/jenkins_home/jobs/JPetStore'), type: 'Static Analyzer', wait: true
- //}
-  //stage('publish artificats to ucd'){
-   //step([$class: 'UCDeployPublisher',
-     //   siteName: 'ucd-server',
-      //  component: [
-        //    $class: 'com.urbancode.jenkins.plugins.ucdeploy.VersionHelper$VersionBlock',
-          //  componentName: 'jenkins-jpet-component',
-           // createComponent: [
-             //   $class: 'com.urbancode.jenkins.plugins.ucdeploy.ComponentHelper$CreateComponentBlock',
-              //  componentTemplate: '',
-               // componentApplication: 'JPetStore'
-            //],
-            //delivery: [
-              //  $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeliveryHelper$Push',
-               // pushVersion: '${BUILD_NUMBER}',
-                //baseDir: '/var/jenkins_home/workspace/JPetStore/target',
-                //fileIncludePatterns: '*.war',
-                //fileExcludePatterns: '',
+// appscan application: '17969f05-19dd-4143-b7e2-c52a3336db18', credentials: 'Credential for ASOC', failBuild: true, failureConditions: [failure_condition(failureType: 'high', threshold: 20)], name: 'test_07012019', scanner: static_analyzer(hasOptions: false, target: '/var/jenkins_home/jobs/JPetStore'), type: 'Static Analyzer', wait: true
+// }
+  stage('publish artificats to ucd'){
+   step([$class: 'UCDeployPublisher',
+        siteName: 'ucd-server',
+        component: [
+            $class: 'com.urbancode.jenkins.plugins.ucdeploy.VersionHelper$VersionBlock',
+            componentName: 'jenkins-jpet-component',
+            createComponent: [
+                $class: 'com.urbancode.jenkins.plugins.ucdeploy.ComponentHelper$CreateComponentBlock',
+                componentTemplate: '',
+                componentApplication: 'JPetStore'
+            ],
+            delivery: [
+                $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeliveryHelper$Push',
+                pushVersion: '${BUILD_NUMBER}',
+                baseDir: '/var/jenkins_home/workspace/JPetStore/target',
+                fileIncludePatterns: '*.war',
+                fileExcludePatterns: '',
                // pushProperties: 'jenkins.server=Jenkins-app\njenkins.reviewed=false',
-                //pushDescription: 'Pushed from Jenkins'
-            //]
-        //]
-    //])
-	//step([$class: 'UCDeployPublisher',
-        //	siteName: 'ucd-server',
-        //	deploy: [
-          //  	$class: 'com.urbancode.jenkins.plugins.ucdeploy.DeployHelper$DeployBlock',
-            //	deployApp: 'JPetStore',
-            //	deployEnv: 'JPetStore_Dev',
-            //	deployProc: 'Deploy-JPetStore',
-            //	createProcess: [
-              //  	$class: 'com.urbancode.jenkins.plugins.ucdeploy.ProcessHelper$CreateProcessBlock',
-                //	processComponent: 'Deploy'
-            	//],
-            	//deployVersions: 'jenkins-jpet-component:${BUILD_NUMBER}',
-		////deployVersions: 'SNAPSHOT=Base Configuration',
-            	//deployOnlyChanged: false
-       // ]
-    //])
- //}
+                pushDescription: 'Pushed from Jenkins'
+            ]
+        ]
+    ])
+	step([$class: 'UCDeployPublisher',
+        	siteName: 'ucd-server',
+        	deploy: [
+            	$class: 'com.urbancode.jenkins.plugins.ucdeploy.DeployHelper$DeployBlock',
+            	deployApp: 'JPetStore',
+            	deployEnv: 'JPetStore_Dev',
+            	deployProc: 'Deploy-JPetStore',
+            	createProcess: [
+                	$class: 'com.urbancode.jenkins.plugins.ucdeploy.ProcessHelper$CreateProcessBlock',
+                	processComponent: 'Deploy'
+            	],
+            	deployVersions: 'jenkins-jpet-component:${BUILD_NUMBER}',
+		//deployVersions: 'SNAPSHOT=Base Configuration',
+            	deployOnlyChanged: false
+        ]
+    ])
+ }
  
-//stage ('One Test') {
- //	echo 'Executing HCL One test ... '
-//	sh '/var/jenkins_home/onetest/hcl-onetest-command.sh'
-  //}
+stage ('One Test') {
+ 	echo 'Executing HCL One test ... '
+	sh '/var/jenkins_home/onetest/hcl-onetest-command.sh'
+  }
 
-
-
+}

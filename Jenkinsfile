@@ -72,9 +72,9 @@ node{
     ])
  }
  
-stage ('One Test') {
- 	echo 'Executing HCL One test ... '
-	sh '/var/jenkins_home/onetest/hcl-onetest-command.sh'
-  }
+//stage ('One Test') {
+ //	echo 'Executing HCL One test ... '
+//	sh '/var/jenkins_home/onetest/hcl-onetest-command.sh'
+  //}
 
 }

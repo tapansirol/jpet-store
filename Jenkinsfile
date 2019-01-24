@@ -77,5 +77,5 @@ node{
 //	sh '/var/jenkins_home/onetest/hcl-onetest-command.sh'
   //}
 
-}
+
 

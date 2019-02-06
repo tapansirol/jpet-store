@@ -46,7 +46,7 @@ stage ("Appscan"){
             ],
             delivery: [
                 $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeliveryHelper$Push',
-                pushVersion: '${BUILD_NUMBER}',
+                pushVersion: 'v${BUILD_NUMBER}',
                 baseDir: '/var/jenkins_home/workspace/JPetStore/target',
                 fileIncludePatterns: '*.war',
                 fileExcludePatterns: '',

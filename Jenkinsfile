@@ -66,7 +66,7 @@ stage ("Appscan"){
                 	$class: 'com.urbancode.jenkins.plugins.ucdeploy.ProcessHelper$CreateProcessBlock',
                 	processComponent: 'Deploy'
             	],
-            	deployVersions: 'jenkins-jpet-component:${BUILD_NUMBER}',
+            	deployVersions: 'jenkins-jpet-component:v${BUILD_NUMBER}',
 		//deployVersions: 'SNAPSHOT=Base Configuration',
             	deployOnlyChanged: false
         ]

@@ -87,7 +87,7 @@ Exotic Varieties  </div>
 
 	<B> Internal DEMO </B>
  <div>
-<a ZZZZZhref="https://about.petco.com/2016-05-17-Petco-Features-7-Point-Pet-Care-Check-in-New-Grooming-Campaign" shape="RECT" target="_blank"><img src="../images/new_grooming_campaign.gif"></a>
+<a href="https://about.petco.com/2016-05-17-Petco-Features-7-Point-Pet-Care-Check-in-New-Grooming-Campaign" shape="RECT" target="_blank"><img src="../images/new_grooming_campaign.gif"></a>
 </div>
 	
 <div id="Separator">&nbsp;</div>

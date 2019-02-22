@@ -46,7 +46,7 @@ stage ("Appscan"){
             ],
             delivery: [
                 $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeliveryHelper$Push',
-                pushVersion: 'v${BUILD_NUMBER}',
+                pushVersion: 'ver${BUILD_NUMBER}',
                 baseDir: '/var/jenkins_home/workspace/JPetStore/target',
                 fileIncludePatterns: '*.war',
                 fileExcludePatterns: '',
@@ -66,7 +66,7 @@ stage ("Appscan"){
                 	$class: 'com.urbancode.jenkins.plugins.ucdeploy.ProcessHelper$CreateProcessBlock',
                 	processComponent: 'Deploy'
             	],
-            	deployVersions: 'jenkins-jpet-component:v${BUILD_NUMBER}',
+            	deployVersions: 'jenkins-jpet-component:ver${BUILD_NUMBER}',
 		//deployVersions: 'SNAPSHOT=Base Configuration',
             	deployOnlyChanged: false
         ]

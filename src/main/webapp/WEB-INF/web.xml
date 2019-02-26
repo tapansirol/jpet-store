@@ -56,8 +56,8 @@
 		<servlet-name>StripesDispatcher</servlet-name>
 		<url-pattern>*.action</url-pattern>
 	</servlet-mapping>
-	<!-- <context-param>
+	 <context-param>
 		<param-name>defaultHtmlEscape</param-name>
 		<param-value>true</param-value>
-	</context-param> --> 
+	</context-param> 
 </web-app>

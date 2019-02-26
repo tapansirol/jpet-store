@@ -74,9 +74,8 @@ stage ("Appscan"){
  }
  
 stage ('HCL One Test') {
-	sleep 5
- //	echo 'Executing HCL One test ... '
-//	sh '/var/jenkins_home/onetest/hcl-onetest-command.sh'
+	echo 'Executing HCL One test ... '
+	sh '/var/jenkins_home/onetest/hcl-onetest-command.sh'
   }
 
 }

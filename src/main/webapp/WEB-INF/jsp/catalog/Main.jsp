@@ -85,11 +85,11 @@ Exotic Varieties  </div>
 	usemap="#estoremap" width="350" /></div>
 </div>
 
-<!--	
+	
 <div>
 <a href="https://about.petco.com/2016-05-17-Petco-Features-7-Point-Pet-Care-Check-in-New-Grooming-Campaign" shape="RECT" target="_blank"><img src="../images/new_grooming_campaign.gif"></a>
 </div> 
--->	
+	
 <div id="Separator">&nbsp;</div>
 </div>
 <%@ include file="../common/IncludeBottom.jsp"%>

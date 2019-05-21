@@ -1,6 +1,7 @@
 //node{
 pipeline {
     agent any
+stages {
   stage ('cloning the repository'){
       git 'https://github.com/tapansirol/jpet-store'
   }
@@ -81,5 +82,5 @@ stage ('HCL One Test') {
 	 echo 'Executing HCL One test ... '
 	 sh '/var/jenkins_home/onetest/create-and-execute-workspace.sh'
  }
-
+}
 }
